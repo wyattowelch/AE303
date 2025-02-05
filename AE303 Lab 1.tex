@@ -1,0 +1,631 @@
+\documentclass[conf]{new-aiaa}
+%\documentclass[journal]{new-aiaa} for journal papers
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{biblatex}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\usepackage{matlab-prettifier}
+\addbibresource{sources.bib}
+\setlength\LTleft{0pt} 
+
+\title{AE 303 Lab 1 - Simple Data Interpretation}
+
+\author{Wyatt O. Welch\footnote{SDSU Student, School of Engineering.}}
+\affil{San Diego State University, San Diego, California, 92182}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The purpose of this project is to perform data interpretation on the simple data set gathered from the barometer and thermometer in the lab. The objectives are to demonstrate ability to measure ambient room temperature and pressure.To Apply latitude and temperature corrections to data sets. To calculate the following using data sets; Sample mean, $\bar{x}$, Sample standard deviation, $S_x$, and Sample standard deviation of the means, $S_{\bar{x}}$. Students must also characterize and interpret one-time sample uncertainty and mean value uncertainty for observed and derived variables, determine significant digits of quantities, and conduct the "Convergence test" for statistical quantities.
+\par
+The deliverables for the lab are to present the calculated objectives in tabular form, and a plot to show the "Convergence test" for the following using the measured atmospheric pressure; Sample mean $\bar{p}$, Sample standard deviation $S_p$, and Sample standard deviation $S_{\bar{p}}$.
+\end{abstract}
+
+\section{Nomenclature}
+
+{\renewcommand\arraystretch{1.0}
+\noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
+
+$\bar{x}$ & Sample mean \\
+$S_x$ & Sample standard deviation \\
+$S_{\bar{x}}$ & Sample standard deviation of means\\
+$R$ & Universal Gas Constant\\
+$M$ & Molar Mass\\
+$t$ & Student Uncertainty Value\\
+$\rho$ & Density
+
+\end{longtable*}}
+
+\section{Introduction}
+\lettrine{T}{his} report will follow AIAA formatting, and cover all deliverables assigned by Prof. Xiaofeng Liu. Through lab protocol, and the teachings given during lectures, the student will produce all data tables, figures, and graphs in an organized and readable format. The goal is to display proper understanding of procedure, lab etiquette, and how to use essential tools for many experiments.
+
+\section{Equipment and Procedure}
+
+The Experiment was performed with two instruments; the first being a simple thermometer using alcohol. To read this, students must avoid touching the metal at the bottom, which the temperature is observed through, to avoid tampering with results. When looking at the temperature level, view the thermometer from the side which delivers the numbers of the appropriate units. In this case, students recorded the temperature in Fahrenheit. Keeping the eyes level with the red line in order to record a more accurate reading.\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{barTherm.png}
+    \caption{Laboratory Fortin Barometer and Alcohol Thermometer}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\linewidth]{Barometerdiagram.png}
+    \caption{Diagram of Fortin Barometer}
+    \label{fig:enter-label}
+\end{figure}
+
+The second apparatus used for data collection was a Fortin Barometer \cite{Fortin}. This Barometer is a long slender pipe filled mainly with mercury. There is access to the pipe through a pool in the bottom exposed to the atmosphere, which drive the mercury down then back up the pipe. At the top of the pipe is a vacuum, and the height of the vacuum can give a direct relation to the pressure in the atmosphere. By calibrating the device (first with a screw to adjust the mercury level to touch an ivory pointer, keeping your eye level with the meniscus, then with a screw at the top to adjust the vernier and eyeing the guide with eyes level to the plane), students can read the measurements and get an extremely accurate reading of the atmospheric pressure. With the two readings measured, students are to write the estimated barometric pressure in units of millimeters (mm) and inches (in). This, along with the recorded temperature from the thermometer, students can compile all needed data to perform the experiment\cite{vid}.\par
+
+\section{Results}
+Using the methods described in Section II, we can record the data and compare it to the provided tables on adjusting pressure and temperature readings based on location on Earth, and the temperature of the room. With the table, each reading recorded will be changed slightly to standardize the readings and make them more reliable for lab use \cite{barcor} \cite{tempcor}. This is done by observing the temperature, barometric reading, and/or the lab's latitude on earth (estimated as 32$^\circ$43'48.00" North), and determining the decrease in value for each data point. The corrected data is provided in Figure 1, and the Raw data can be found in section A of the Appendix.
+
+\begin{table}[ht]
+    \centering
+    \footnotesize
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c||}
+            \hline
+            Pressure (kPa) & Temp (K)  \\ [0.5ex]
+            \hline\hline
+            101.21 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.38 & 300 \\
+            \hline
+            101.35 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.34 & 296 \\
+            \hline
+            101.28 & 296 \\
+            \hline
+            101.35 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.38 & 299 \\
+            \hline
+            101.35 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.35 & 296 \\
+            \hline
+            101.41 & 296 \\
+            \hline
+            101.38 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c||}
+            \hline
+            Pressure (kPa) & Temp (K)  \\ [0.5ex]
+            \hline\hline
+            101.28 & 296 \\
+            \hline
+            101.25 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.25 & 296 \\
+            \hline
+            101.08 & 297 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.25 & 296 \\
+            \hline
+            101.07 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.11 & 296 \\
+            \hline
+            101.31 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.28 & 296 \\
+            \hline
+            101.21 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+            101.28 & 296 \\
+            \hline
+            101.35 & 296 \\
+            \hline
+            101.34 & 296 \\
+            \hline
+            101.28 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c||}
+            \hline
+            Pressure (kPa) & Temp (K)  \\ [0.5ex]
+            \hline\hline
+            98.77 & 296 \\
+            \hline
+            98.77 & 296 \\
+            \hline
+            99.11 & 296 \\
+            \hline
+            99.45 & 296 \\
+            \hline
+            99.45 & 296 \\
+            \hline
+            99.11 & 296 \\
+            \hline
+            99.11 & 296 \\
+            \hline
+            100.80 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+            98.44 & 296 \\
+            \hline
+            99.45 & 297 \\
+            \hline
+            98.77 & 296 \\
+            \hline
+            99.45 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+            98.44 & 296 \\
+            \hline
+            101.14 & 296 \\
+            \hline
+            99.45 & 296 \\
+            \hline
+            100.46 & 296 \\
+            \hline
+            100.13 & 296 \\
+            \hline
+            98.77 & 296 \\
+            \hline
+        \end{tabular}
+    \end{minipage}
+    \caption{Groups 1, 2, and 3 Adjusted Data.}
+\end{table}
+
+It should be noted that the corrected data is very similar to the raw data, understandable given our proximity to sea level at time of recording, and the simple and consistent temperature of a laboratory. We will be using the corrected data for all calculations going forward in the report. In addition, the units for pressure and temperature have been converted from inHg to kPa, and from F to K respectively. With this unit change we can keep consistent metric units, which is ideal for most lab work.
+\par
+After adjusting these values and setting them to the proper units, it is time to calculate the density of the air in the room. To do this, some parameters will need to be defined. The first is Molar Mass (M), which for air is stable around $0.028964 \frac{kg}{mol}$. The second is the Universal Gas Constant (R), at a constant value of $8.314 \frac{J}{mol K}$. Assuming an Ideal Gas, we can use the Ideal Gas Law to calculate density. This equation will be used frequently in further calculations.
+\begin{equation}
+    \rho = \frac{PM}{RT}
+\end{equation}
+\par
+Using the Student t distribution table given in lecture slides, identifying the number of tests in each group to be N = 20 trials, and taking the percent certainty to be 95\%, we can define $t = 2.093$. With this value, we may calculate the uncertainty for both the one-time sample, and the ensemble average for each group and for each value. To start, we must define the formulas for sample mean and standard deviation:
+\begin{equation}
+    \bar{x} = \frac{\sum_{i=0}^Nx_i}{N}
+\end{equation}
+This equation will be applied to the standard deviation in equation 2.
+\begin{equation}
+    S_x = \sqrt{\frac{\sum_{i=0}^Nx_i-\bar{x}}{N}}
+\end{equation}
+With these two equations, and t-value, it is simple to calculate the Confidence Interval within 95\% for the one-time sample and ensemble average. The Confidence Interval formula is as follows:
+\begin{equation}
+    CI = \bar{x} \pm \frac{tS_x}{\sqrt{N}}
+\end{equation}
+With these equations defined and out of the way, we can present the next two tables. These will present the one-time and ensemble values for the measured pressure, temperature, and calculated density in the form of the uncertainty range from the Confidence Interval in equation 4.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{||c c c c c c c||}
+        \hline
+        \multicolumn{7}{||c||}{One-Time Sample} \\ \hline
+        & \multicolumn{2}{c}{Pressure ($kPa$)} & \multicolumn{2}{c}{Temperature ($K$)} & \multicolumn{2}{c}{Density ($\frac{kg}{m^3}$)} & \\ \hline
+        Group 1 & 99.485 & 99.420 & 296 & 295 & 1.17 & 1.17 \\ \hline
+        Group 2 & 99.491 & 99.414 & 296 & 296 & 1.17 & 1.18 \\ \hline
+        Group 3 & 98.880 & 99.025 & 296 & 296 & 1.18 & 1.17 \\ \hline
+    \end{tabular}
+    \caption{One-Time Sample Uncertainty for Groups 1, 2, and 3.}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{||c c c c c c c||}
+        \hline
+        \multicolumn{7}{||c||}{Ensemble Average} \\ \hline
+        & \multicolumn{2}{c}{Pressure ($kPa$)} & \multicolumn{2}{c}{Temperature ($K$)} & \multicolumn{2}{c}{Density ($\frac{kg}{m^3}$)} & \\ \hline
+        Group 1 & 101.34 & 101.28 & 297 & 296 & 1.19 & 1.19 \\ \hline
+        Group 2 & 101.27 & 101.19 & 296 & 296 & 1.18 & 1.18 \\ \hline
+        Group 3 & 99.996 & 99.142 & 296 & 296 & 1.18 & 1.17 \\ \hline            
+    \end{tabular}
+    \caption{Ensemble Average Uncertainty for Groups 1, 2, and 3.}
+\end{table}
+the data in tables 3 and 4 give the potential range which these values truly were in the room, with a 95\% certainty that it is within this range. By showing these calculations, we can compare with the recorded data and see just how accurate our testing was, since with any large N we can assume the average converges on the correct value, which we will be discussing in more detail shortly.
+\par
+The measurements taken in the lab were able to record with a solid level of accuracy, but is easily overshadowed by even the simplest modern barometers and thermometers. The Fortin Barometer has the ability to achieve a reading of 0.01" reading accuracy, which would translate to 33.86 Pa. With this in mind, recall that all readings are in the area of ~29", which would translate to near 100,000 Pa. This calls for 5 significant figures. The thermometer can read with an accuracy of 0.01$^\circ$F, with the data all landing above 70$^\circ$F, the significant figures would be 3 for Temperature, as is shown in Table 1.
+\par
+
+\begin{table}
+    \begin{center}
+    \begin{tabular}{||c c c c||}
+        \hline
+         & Pressure (inHg) & Temperature (F) & Density ($\frac{kg}{m^3}$)  \\ [0.5ex]
+        \hline
+        Measurement Resolutions & 4 & 3 & 3\\
+        \hline\hline
+         & Pressure (Pa) & Temperature (K) & Density ($\frac{kg}{m^3}$)  \\ [0.5ex]
+        \hline
+        Measurement Resolutions & 5 & 3 & 3\\
+        \hline
+
+    \end{tabular}
+    \caption{Measurement Resolutions from Raw and Adjusted Data}
+    \end{center}
+\end{table}
+
+Density was calculated in equation 1, and as per the teachings of the instructor, when doing calculations with figures of different significant figures, it is standard to use the smallest significant figure as the size for your resulting number. These figures are displayed in Table 4.
+\par
+The following is table 4 as described. Beyond is Figure 3, which means to show the convergence tests.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Fig1.png}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Fig2.png}
+    \label{fig:enter-label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Fig3.png}
+    \caption{Convergence Tests for $\bar{x}, S_x, S_\bar{x}$.}
+    \label{fig:enter-label}
+\end{figure}
+\pagebreak
+\begin{equation}
+    S_\bar{x} = \frac{S_x}{\sqrt{N}}
+\end{equation}
+With these calculations, and equation 5 which defines the Sample standard deviation of the means, we are able to plot the convergence of a set of data points to a single 'true' value. By doing so, we can show the accuracy of groups of data and identify where issues arise within the testing. Figure 3 shows the three plots of the Sample Mean, Standard Deviation, and Standard Deviation of the Means for atmospheric pressure. Each image shows the three groups results and the trending of results as each test was recorded. It is clear that there are issues with the data, however they will be covered in the discussion section.
+\section{Discussion}
+The process and execution of instructions for this lab was solid. Having personally witnessed all three groups perform each test it is confirmed that they each received the exact same level of instruction. However, looking at figure 3, it is clear that something is amiss. In all three images, Group 3 is far off on similarity to the other two groups. While image 1 shows group 3 approaching the other two, in images 2 and 3, it appears to not have a converging path at all and may be traveling further away from the other two groups.\par
+The reason for this massive error can be attributed to the spread of data between the three different groups. With a quick look at the raw data under the InHg barometer reading, the spread in, say, group 1 is 0.08, but with group 3, that spread is 0.8. With 10 times the variance, it's no wonder the results are so hyper and jumping all around. It is hard to tell what caused so much error within this group, however it may be that instructions were not properly understood, or some simply copied the result written above and error grew from there. This could be fixed by having students write data down on separate papers or documents, creating a blind study where students do not indirectly influence what others write. Students may also need a reminder that it is not about finding the exact same number as others, instead being accurate is the main purpose.\par
+Further error would be found in the age and inaccuracy of the instruments used. The thermometer reads with no decimal accuracy, which caused many students in all groups to record their readings to the ones place, instead of to a more accurate tenths place. The barometer was also difficult to read, and the mercury had stained the glass making it difficult to judge where the meniscus is. Besides the clear error in the lab, I would have to say that between groups 1 and 2, the data is very strong and shows a very solid trend of accuracy and was performed optimally.
+\section{Conclusion}
+The work done in this lab was simple, but it was impressive how much there was to write about, clearly the statistics side of our labs can be an extremely complex process and it makes for some interesting data to write about. In further assignments, it would be good to use a digital thermometer and barometer to have a more consistent reading of the atmosphere. Besides that, have more attention towards the procedure and following the proper number of significant figures will be key in having more effective results down the line.
+\pagebreak
+\section{Acknowledgments}
+
+\printbibliography
+
+\pagebreak
+\section*{Appendix}
+\subsection{Raw Data}
+\begin{table}[ht]
+    \centering
+    \footnotesize
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c c||}
+            \hline
+            Bar (In) & Bar (Mm) & Temp (F)  \\ [0.5ex]
+            \hline\hline
+             29.9 & 760.1 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             30.0 & 767.0 & 81.0 \\
+             \hline
+             29.9 & 760.8 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             29.9 & 760.9 & 73.0 \\
+             \hline
+             29.9 & 760.0 & 73.0 \\
+             \hline
+             29.9 & 760.0 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             29.9 & 760.0 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.0 \\
+             \hline
+             30.0 & 760.9 & 79.0 \\
+             \hline
+             29.9 & 760.6 & 73.0 \\
+             \hline
+             29.9 & 760.6 & 73.0 \\
+             \hline
+             29.9 & 760.8 & 73.0 \\
+             \hline
+             30.0 & 761.0 & 73.0 \\
+             \hline
+             30.0 & 761.0 & 73.0 \\
+             \hline
+             29.9 & 760.0 & 73.0 \\
+             \hline
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c c||}
+            \hline
+            Bar (In) & Bar (Mm) & Temp (F)  \\ [0.5ex]
+            \hline\hline
+             29.9 & 760.4 & 73.0 \\
+             \hline
+             29.9 & 761.1 & 73.2 \\
+             \hline
+             29.9 & 761.2 & 73.1 \\
+             \hline
+             29.9 & 760.3 & 73.0 \\
+             \hline
+             29.9 & 758.8 & 74.3 \\
+             \hline
+             29.9 & 760.5 & 73.0 \\
+             \hline
+             29.9 & 760.4 & 73.9 \\
+             \hline
+             29.9 & 758.8 & 73.2 \\
+             \hline
+             29.9 & 759.8 & 73.0 \\
+             \hline
+             29.9 & 760.3 & 73.4 \\
+             \hline
+             29.9 & 760.5 & 73.1 \\
+             \hline
+             29.9 & 760.2 & 73.5 \\
+             \hline
+             29.9 & 760.2 & 73.0 \\
+             \hline
+             29.9 & 761.2 & 73.1 \\
+             \hline
+             29.9 & 761.5 & 73.0 \\
+             \hline
+             29.9 & 760.4 & 73.5 \\
+             \hline
+             30.0 & 760.5 & 73.0 \\
+             \hline
+             30.0 & 760.4 & 73.2 \\
+             \hline
+             29.9 & 761.3 & 73.0 \\
+             \hline
+             29.9 & 761.0 & 73.7 \\
+             \hline
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tabular}{||c c c||}
+            \hline
+            Bar (In) & Bar (Mm) & Temp (F)  \\ [0.5ex]
+            \hline\hline
+             29.2 & 760.5 & 73.0 \\
+             \hline
+             29.2 & 760.6 & 73.0 \\
+             \hline
+             29.3 & 760.7 & 74.0 \\
+             \hline
+             29.4 & 760.3 & 74.0 \\
+             \hline
+             29.4 & 761.1 & 74.0 \\
+             \hline
+             29.3 & 760.4 & 73.0 \\
+             \hline
+             29.3 & 760.3 & 73.0 \\
+             \hline
+             29.8 & 760.6 & 73.0 \\
+             \hline
+             29.9 & 760.0 & 73.0 \\
+             \hline
+             29.1 & 760.5 & 73.0 \\
+             \hline
+             29.4 & 761.2 & 75.0 \\
+             \hline
+             29.2 & 760.0 & 74.0 \\
+             \hline
+             29.4 & 760.4 & 73.0 \\
+             \hline
+             29.9 & 760.1 & 73.0 \\
+             \hline
+             29.1 & 760.3 & 73.0 \\
+             \hline
+             29.8 & 760.1 & 73.0 \\
+             \hline
+             29.4 & 760.6 & 73.0 \\
+             \hline
+             29.7 & 759.2 & 74.0 \\
+             \hline
+             29.6 & 758.0 & 74.0 \\
+             \hline
+             29.2 & 759.8 & 73.0 \\
+             \hline
+        \end{tabular}
+    \end{minipage}
+    \caption{Groups 1, 2, and 3 Raw Data.}
+\end{table}
+
+\pagebreak
+\subsection{MATLAB Code}
+\begin{lstlisting}[style=Matlab-editor]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% AE302 Lab 1 - Wyatt Welch
+%
+% NOTE: For groups 1 and 2, there are seperate and 
+% nearly identical documents. This document has the 
+% resulting data sets from those two imported for 
+% simplicity and readability.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clc, clear all 
+
+% Raw Data
+barIn = [29.2 29.2 29.3 29.4 29.4 29.3 29.3 29.8 29.9 29.1 29.4 29.2 29.4 29.9 29.1 29.9 29.4 29.7 29.6 29.2];
+barMm = [760.5 760.6 760.7 760.3 761.1 760.4 760.3 760.6 760.0 760.5 761.2 760.0 760.4 760.1 760.3 760.1 760.6 759.2 758.0 759.8];
+temp = [73.0 73.0 74.0 74.0 74.0 73.0 73.0 73.0 73.0 73.0 75.0 74.0 73.0 73.0 73.0 73.0 73.0 74.0 74.0 73.0];
+tempV = temp';
+rawtable3 = [barIn;barMm;temp]';
+
+WbarIn = 29.4;
+WbarMm = 760.6;
+Wtemp = 73;
+
+% Constants
+gm = 9.8066; %m/s^2
+gf = 32.174; %ft/s^2
+R = 8.314; %J/molK
+M = .028964; %kg/mol
+
+
+t = 2.093; %Using table
+
+% Latitude and Temperature Corrections
+tAdjust = [.117 .117 .120 .120 .120 .118 .118 .120 .120 .121 .123 .119 .118 .121 .117 .121 .118 .121 .122 .117];
+tCor = temp - tAdjust;
+tCorK = (tCor - 32) .* (5/9) + 273.15;
+
+WtCor = 72.882;
+WtCorC = 22.1722;
+WtCorK = 295.862;
+
+pAdjust = [.032 .032 .032 .032 .032 .032 .032 .033 .033 .032 .032 .032 .032 .033 .032 .033 .032 .033 .033 .032];
+pCor = barIn - pAdjust;
+pCorPa = pCor .* 3386.39;
+WpCor = 29.3682;
+WpCorAtm = .98152;
+WpCorPa = 99452.5;
+combtp3 = [pCorPa;tCorK]';
+
+%%%%%%%% Calculations %%%%%%%%
+N = length(temp);
+
+tSampleMean = sum(tCorK)./N;
+pSampleMean = sum(pCorPa)./N;
+
+tSampleSD = sqrt(sum((tCorK-tSampleMean).^2) ./ (N-1));
+tSampleSDpm = tSampleSD * t;
+pSampleSD = sqrt(sum((pCorPa-pSampleMean).^2) ./ (N-1));
+pSampleSDpm = pSampleSD * t;
+
+tSampleSDMean = tSampleSD ./ sqrt(N);
+pSampleSDMean = pSampleSD ./ sqrt(N);
+
+% Calcuate Density
+Wdensity = (WpCorPa * M) / (R * WtCorK);
+density = (pCorPa .* M) ./ (R .* tCorK);
+
+% Calculate Confidence Intervals
+tCI = [tSampleMean + (t*tSampleSD)/sqrt(N), tSampleMean - (t*tSampleSD)/sqrt(N)];
+pCI = [pSampleMean + (t*pSampleSD)/sqrt(N), pSampleMean - (t*pSampleSD)/sqrt(N)];
+
+wtCI = [WtCorK + (t*tSampleSD)/sqrt(N), WtCorK - (t*tSampleSD)/sqrt(N)];
+wpCI = [WpCorPa + (t*pSampleSD)/sqrt(N), WpCorPa - (t*pSampleSD)/sqrt(N)];
+
+dMean = sum(density) ./ N;
+dSD = sqrt(sum((density-dMean).^2) ./ (N-1));
+dSDMean = dSD ./ sqrt(N);
+dCI = [dMean + (t*dSD)/sqrt(N), dMean - (t*dSD)/sqrt(N)];
+wdCI = [Wdensity + (t*dSD)/sqrt(N), Wdensity - (t*dSD)/sqrt(N)];
+
+% Running Averages
+running_avg = zeros(1, N);
+
+cumulative_sum = 0; 
+for i = 1:N
+    cumulative_sum = cumulative_sum + pCorPa(i);
+    running_avg(i) = cumulative_sum / i;
+end
+
+std_devs = zeros(1, N); % Preallocate array for standard deviations
+
+for i = 1:N
+    std_devs(i) = sqrt(sum((pCorPa(1:i)-pSampleMean).^2) ./ (N-1)); % Sample standard deviation (normalizing by N-1)
+end
+
+
+sd_means = zeros(1, N); % Preallocate array for SD/sqrt(N)
+
+for i = 1:N
+    sd_means(i) = sqrt(sum((pCorPa(1:i)-pSampleMean).^2) ./ (N-1)) / sqrt(i); % Standard deviation of the means
+end
+
+%%%%%%%% Plotting %%%%%%%%
+running_avg1 = [101212.424320000	101263.220170000	101280.152120000	101305.550045000	101314.016020000	101314.016020000	101299.502920000	101288.194796250	101294.450211111	101293.020402000	101298.007630909	101299.341663333	101300.470460000	101306.033815000	101308.823555333	101308.936435000	101311.227228235	101316.838011667	101320.075875790	101311.306908000]./1000;
+running_avg2 = [101280.152120000	101263.220170000	101246.288220000	101246.288220000	101212.424320000	101229.356270000	101231.775120000	101212.001021250	101211.671788889	101201.587872000	101211.808612727	101211.859921667	101217.113167692	101216.536365000	101211.747042000	101215.810710000	101223.579487059	101230.296933889	101232.742660000	101228.340353000]./1000;
+running_avg3 = running_avg./1000;
+
+figure(1)
+plot(1:N, running_avg1,'-o')
+grid on, hold on
+plot(1:N, running_avg2,'-square')
+plot(1:N, running_avg3,'-^')
+xlabel("Number of Samples")
+ylabel("Sample Mean (kPa)")
+title("Number of Samples vs. Sample mean")
+legend("Group 1",'Group 2','Group 3')
+
+
+std1 = [22.6852214930422	22.6937337715754	22.7022428584028	27.8660360685761	29.1018072906668	29.1084432062223	36.9042103299644	43.7308983398862	44.3887075507091	44.9604566713035	45.7366580053691	45.7408806627818	45.7451029304079	48.2621388606169	48.9860517781275	48.9862981986143	49.6996643108532	54.8273829910075	56.9443722498587	68.5832534711971];
+std2 = [11.8864345494337	12.5794007252270	13.0986243471517	13.7305482809560	37.3429359506760	42.1998518074240	42.4002534058043	55.3019910041914	55.4790038545627	61.6819280963565	64.7378782540512	64.8407704921704	65.9212624599702	66.0698305127477	68.8000605777787	69.6912497385152	74.8929915879104	79.4924041779894	80.2649629452783	82.5269053589780];
+std3 = std_devs;
+figure(2)
+plot(1:N, std1,'-o')
+grid on, hold on
+plot(1:N, std2,'-square')
+plot(1:N, std3,'-^')
+xlabel("Number of Samples")
+ylabel("Sample Standard Deviation")
+title("Number of Samples vs. Sample Standard Deviation")
+legend("Group 1",'Group 2','Group 3')
+
+
+stdm1 = [22.6852214930422	16.0468930403231	13.1071460255071	13.9330180342880	13.0147238740060	11.8834721770047	13.9484804091867	15.4612073817565	14.7962358502364	14.2177447722632	13.7901212516922	13.2042548818138	12.6874087859203	12.8985991692383	12.6481441822095	12.2465745496536	12.0539391477287	12.9229381025511	13.0639349494998	15.3356816879695];
+stdm2 = [11.8864345494337	8.89497955607097	7.56249429284182	6.86527414047802	16.7002686530264	17.2280173582092	16.0257894339825	19.5522064260906	18.4930012848542	19.5055383255221	19.5192047174905	18.7179181490586	18.2832686109802	17.6579049557803	17.7640992557199	17.4228124346288	18.1642185256147	18.7365393490260	18.4140453781845	18.4535770355366];
+stdm3 = sd_means;
+figure(3)
+plot(1:N, stdm1,'-o')
+grid on, hold on
+plot(1:N, stdm2,'-square')
+plot(1:N, stdm3,'-^')
+xlabel("Number of Samples")
+ylabel("Sample Standard Deviation of the Means")
+title("Number of Samples vs. Sample Standard Deviation of the Means")
+legend("Group 1",'Group 2','Group 3')
+\end{lstlisting}
+
+\end{document}
